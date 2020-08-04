@@ -48,3 +48,6 @@ A: In this simple case I don't immediately see optimisations.
 
 Edit:
 A: As of now there is a standard delay of 10 seconds before any message can be processed by the consumer. I have chosen the number 10 random, but with a good internet connection this should be able to be a lot smaller.
+
+The curl sent to the importer:
+curl --location --request POST 'localhost:8080/messages' --header 'Content-Type: application/json' --data-raw '{ "message": "Hello there", "timestamp": "2020-08-04T16:28:44.797"}'
