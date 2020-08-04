@@ -11,6 +11,9 @@ are received.
 Edit:
 A: The importer now holds the message for a maximum of 10 seconds to see if other messages were sent earlier. A timestamp is used in the message which is set to the time the message was sent. When the message arrives at the importer, the importer starts a TimerTask that queues the message 10 seconds after the inital send time.
 by the client. 
+
+The 10 seconds basically allow for messages with a delay to still be handled before any messages that arrived in time but were send later.
+
 Assumptions:
   - If a message arrives 10 seconds late or more, the connection has timed out and the message can be discarded.
 
